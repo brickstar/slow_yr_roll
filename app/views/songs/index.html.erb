@@ -1,0 +1,8 @@
+<h1>Songs#index</h1>
+<h2>Songs!</h2>
+<% @songs.each do |song| %>
+  <audio controls>
+    <source> <%= song.path %> </source>
+  </audio>
+  <%= song.title %>
+<% end %>
