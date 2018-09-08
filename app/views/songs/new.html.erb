@@ -1,0 +1,10 @@
+<h1>Songs#new</h1>
+<%= form_for @song do |f| %>
+  <%= f.file_field :audio %>
+  <%= f.label :audio %>
+
+  <%= f.text_field :title %>
+  <%= f.label :title %>
+
+  <%= f.submit %>
+<% end %>
