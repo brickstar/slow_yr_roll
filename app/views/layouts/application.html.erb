@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title>SlowYrRoll</title>
+    <title>SlowYourRoll</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <title>Hover Effect Style</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
-  <body>
+  <body>  
+    <nav>
+      <%= render partial: 'shared/flash_messages', flash: flash %>
+    </nav>
+
     <%= yield %>
   </body>
+
 </html>
