@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
-  <body>  
+  <body>
     <nav>
+      <%= link_to 'Logout', logout_path %>
       <%= render partial: 'shared/flash_messages', flash: flash %>
     </nav>
 

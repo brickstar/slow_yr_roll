@@ -17,6 +17,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'omniauth-google-oauth2'
 gem 'faraday'
+gem 'figaro'
 
 
 group :development, :test do
@@ -24,6 +25,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
   gem 'launchy'
+  gem 'rspec-rails'
 end
 
 group :development do
