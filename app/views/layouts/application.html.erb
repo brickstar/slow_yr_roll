@@ -17,8 +17,10 @@
 
   <body>
     <nav>
-      <%= link_to 'Logout', logout_path %>
       <%= render partial: 'shared/flash_messages', flash: flash %>
+      <% if current_user %>
+        <%= link_to 'Logout', logout_path %>
+      <% end %>
     </nav>
 
     <%= yield %>
