@@ -9,10 +9,12 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = current_user.songs.create(content_type: params[:song][:audio].content_type,
-                                      headers: params[:song][:audio].headers,
-                                      original_filename: params[:song][:audio].original_filename,
-                                      tempfile: params[:song][:audio].tempfile)
+    binding.pry
+    @song = current_user.songs.create(data: params[:song][:audio])
+    # @song = current_user.songs.create(content_type: params[:song][:audio].content_type,
+    #                                   headers: params[:song][:audio].headers,
+    #                                   original_filename: params[:song][:audio].original_filename,
+    #                                   tempfile: params[:song][:audio].tempfile)
     if @song.save
       flash[:notice] = "Successfully added new song!"
       redirect_to root_path

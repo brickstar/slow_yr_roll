@@ -11,13 +11,14 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
 gem 'pry-rails'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'omniauth-google-oauth2'
 gem 'faraday'
 gem 'figaro'
+gem 'fog-aws'
 
 
 group :development, :test do
