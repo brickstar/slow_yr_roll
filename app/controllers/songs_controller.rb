@@ -9,7 +9,7 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.create!(song_params)
+    @song = current_user.songs.create!(song_params)
     if @song.save
       flash[:notice] = "Successfully added new song!"
       redirect_to root_path
@@ -30,6 +30,6 @@ class SongsController < ApplicationController
   private
 
     def song_params
-      params.require(:song).permit(:title, :audio)
+      params.require(:song).permit(:audio)
     end
 end
