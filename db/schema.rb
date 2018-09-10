@@ -40,10 +40,7 @@ ActiveRecord::Schema.define(version: 2018_09_09_175409) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "content_type"
-    t.string "headers"
-    t.string "original_filename"
-    t.string "tempfile"
+    t.string "data"
     t.index ["user_id"], name: "index_songs_on_user_id"
   end
 
