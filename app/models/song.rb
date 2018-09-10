@@ -1,4 +1,4 @@
 class Song < ApplicationRecord
-  has_many_attached :audios
+  has_one_attached :audio
   belongs_to :user
 end
