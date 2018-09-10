@@ -1,40 +1,35 @@
 class SongsController < ApplicationController
 
   def index
-    @songs = Song.all
+    @songs = AWS::S3::Bucket.find(ENV['AWS_BUCKET']).objects
   end
 
-  def new
-    @song = current_user.songs.new
+  def show
   end
 
-  def create
-    binding.pry
-    @song = current_user.songs.create(data: params[:song][:audio])
-    # @song = current_user.songs.create(content_type: params[:song][:audio].content_type,
-    #                                   headers: params[:song][:audio].headers,
-    #                                   original_filename: params[:song][:audio].original_filename,
-    #                                   tempfile: params[:song][:audio].tempfile)
-    if @song.save
-      flash[:notice] = "Successfully added new song!"
+  def upload
+    begin
+      AWS::S3::S3Object.store(sanitize_filename(params[:mp3file].original_filename), params[:mp3file].read, ENV['AWS_BUCKET'], :access => :public_read)
+      redirect_to root_path
+    rescue
+      render :text => "Couldn't complete the upload"
+    end
+  end
+
+  def delete
+    if (params[:song])
+      AWS::S3::S3Object.find(params[:song], ENV['AWS_BUCKET']).delete
       redirect_to root_path
     else
-      flash[:alert] = "Error adding new song!"
-      render :new
+      render :text => "No song was found to delete!"
     end
-  end
-
-  def stream
-    song = Song.find(params[:id])
-    if song
-      send_file song.tempfile
-    end
-    render :index
   end
 
   private
 
-    def song_params
-      params.require(:song).permit(:title, audio: [])
+    def sanitize_filename(file_name)
+      just_filename = File.basename(file_name)
+      just_filename.sub(/[^\w\.\-]/,'_')
     end
+
 end

@@ -1,7 +1,6 @@
-<h1>Songs#new</h1>
-<%= form_for @song do |f| %>
-  <%= f.file_field :audio %>
-  <%= f.label :audio %>
 
-  <%= f.submit %>
+<h2>Upload a new MP3:</h2>
+<%= form_tag upload_path, :method => "post", :multipart => true do %>
+    <%= file_field_tag "mp3file" %>
+    <%= submit_tag "Upload" %>
 <% end %>
