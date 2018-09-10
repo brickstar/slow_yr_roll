@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :songs
 
   def self.update_or_create(auth)
     user = User.find_by(uid: auth[:uid]) || User.new
@@ -15,5 +16,5 @@ class User < ApplicationRecord
     user.save!
     user
   end
-  
+
 end

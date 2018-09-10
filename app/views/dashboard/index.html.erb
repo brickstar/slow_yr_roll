@@ -1,0 +1,7 @@
+<h1>Hello, <%= current_user.first_name %>!</h1>
+<%= form_for @song do |f| %>
+  <%= f.file_field :audio %>
+  <%= f.label :audio %>
+
+  <%= f.submit %>
+<% end %>
