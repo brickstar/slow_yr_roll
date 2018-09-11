@@ -1,7 +1,21 @@
-<h1>Songs#index</h1>
 <h2>Songs!</h2>
-<% @songs.each do |song| %>
-  <audio controls>
-    <source src="https://s3.us-east-2.amazonaws.com/slowyrroll/34kSJEkNzgyhA52F8SMjwf8q"</source>
-  </audio>
-<% end %>
+<button onclick="getPlaySpeed()" type="button">What is the playback speed?</button>
+<button onclick="setPlaySpeed()" type="button">Set video to be play in slow motion</button><br>
+
+
+<audio id="myAudio" controls>
+  <source src="https://s3.us-east-2.amazonaws.com/slowyrroll/34kSJEkNzgyhA52F8SMjwf8q"</source>
+</audio>
+
+
+<script>
+  var audio = document.getElementById("myAudio");
+
+  function getPlaySpeed() {
+      alert(audio.playbackRate);
+  }
+
+  function setPlaySpeed() {
+      audio.playbackRate = 0.5;
+  }
+</script>
