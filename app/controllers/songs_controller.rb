@@ -1,6 +1,7 @@
 class SongsController < ApplicationController
 
   def index
+    @song = current_user.songs.new
     @songs = Song.all
   end
 
@@ -12,7 +13,7 @@ class SongsController < ApplicationController
     @song = current_user.songs.create!(song_params)
     if @song.save
       flash[:notice] = "Successfully added new song!"
-      redirect_to root_path
+      redirect_to songs_path
     else
       flash[:alert] = "Error adding new song!"
       render :new
