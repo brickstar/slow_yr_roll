@@ -19,14 +19,6 @@ class SongsController < ApplicationController
     end
   end
 
-  def stream
-    song = Song.find(params[:id])
-    if song
-      send_file song.tempfile
-    end
-    render :index
-  end
-
   private
 
     def song_params
