@@ -1,11 +1,15 @@
 <h2>Songs!</h2>
-<button onclick="getPlaySpeed()" type="button">What is the playback speed?</button>
-<button onclick="setPlaySpeed()" type="button">Set video to be play in slow motion</button><br>
 
+<div class="button-box">
+  <button id="speed-alert" onclick="getPlaySpeed()" type="button">What is the playback speed?</button>
+  <button id="set-speed" onclick="setPlaySpeed()" type="button">Set audio to be play in slow motion</button><br>
+</div>
 
-<audio id="myAudio" controls>
-  <source src="https://s3.us-east-2.amazonaws.com/slowyrroll/34kSJEkNzgyhA52F8SMjwf8q"</source>
-</audio>
+<div class="audio-box">
+  <audio id="myAudio" controls>
+    <source src="https://s3.us-east-2.amazonaws.com/slowyrroll/HWzXAevRLkQ8Gf1TLUVii3W8"</source>
+  </audio>
+</div>
 
 
 <script>
@@ -16,6 +20,6 @@
   }
 
   function setPlaySpeed() {
-      audio.playbackRate = 0.5;
+      audio.playbackRate = .25;
   }
 </script>

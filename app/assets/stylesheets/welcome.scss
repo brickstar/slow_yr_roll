@@ -3,12 +3,9 @@
 .box15 .box-content{width:100%;height:100%;position:absolute;top:0;left:0;transition:all .5s ease 0s}
 .box15:hover .box-content{background-color:rgba(255,242,242,.8)}
 .box15 .box-content:after,.box15 .box-content:before{content:"";width:50px;height:50px;position:absolute;opacity:0;transform:scale(1.5);transition:all .6s ease .3s}
-.box15 .box-content:before{border-left:1px solid #040404;border-top:1px solid #040404;top:19px;left:19px}
-.box15 .box-content:after{border-bottom:1px solid #040404;border-right:1px solid #040404;bottom:19px;right:19px}
 .box15:hover .box-content:after,.box15:hover .box-content:before{opacity:1;transform:scale(1)}
 .box15 .title{font-size:22px;color:#000;margin:0;position:relative;top:0;opacity:0;transition:all 1s ease 10ms}
 .box15:hover .title{top:39%;opacity:1;transition:all .5s cubic-bezier(1,-.53,.405,1.425) 10ms}
-.box15 .title:after{content:"";width:0;height:1px;background:#040404;position:absolute;bottom:-8px;left:0;right:0;margin:0 auto;transition:all 1s ease 0s}
 .box15:hover .title:after{width:80%;transition:all 1s ease .8s}
 .box15 .icon{width:100%;margin:0 auto;position:absolute;bottom:0;opacity:0;transition-duration:.6s;transition-timing-function:cubic-bezier(1,-.53,.405,1.425);transition-delay:.1s}
 .box15:hover .icon{bottom:39%;opacity:1}
@@ -17,8 +14,12 @@
 .box15 .icon li a:hover{background:#000;color:#fff}
 
 .box15 {
-  height: 40em;
+  height: 30em;
   width: 40em;
+}
+
+.box-content {
+  border-radius: 15%;
 }
 
 .welcome-box {
@@ -28,6 +29,14 @@
   margin-top: 10em;
   margin-right: 25em;
 }
-#welcome-image {
 
+#title {
+  margin-top: 8em;
+  margin-left: 8em;
+}
+
+#welcome-image {
+  height: 30em;
+  width: 39.9em;
+  border-radius: 15%;
 }
