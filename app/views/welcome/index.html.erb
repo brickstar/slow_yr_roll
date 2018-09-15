@@ -1,12 +1,12 @@
 <div class="welcome-box">
   <div class="col-md-3 col-sm-6">
     <div class="box15">
-      <img id='welcome-image'src="http://robohash.org/1111" alt="">
+      <%= image_tag  "dog_jump.gif", id: 'welcome-image' %>
       <div class="box-content">
         <% if current_user %>
-          <h3>Welcome, <%= "#{current_user.first_name} #{current_user.last_name}" %></h3>
+          <h3 id="title-1" class="title"><%= link_to "My Songs", songs_path %></h3>
         <% else %>
-          <h3 class="title"><%= link_to "Sign in with Google", "/auth/google" %></h3>
+          <h3 id="title" class="title"><%= link_to "Sign in with Google", "/auth/google" %></h3>
         <ul class="icon">
         </ul>
         <% end %>

@@ -1,27 +1,40 @@
-<h1>Songs#index</h1>
-<h2>Songs!</h2>
-<% @songs.each do |song| %>
-  <audio controls>
-    <source src="<%= song.tempfile %>"></source>
-  </audio>
-<% end %>
-<h2>Listen to a MP3 with HTML5 Audio</h2>
-<section id="audio">
+<section class="song-page-box">
+  <div class="song-page-content-box">
+
+    <div class="button-box">
+      <button id="speed-alert" onclick="getPlaySpeed()" type="button">What is the playback speed?</button>
+      <button id="set-speed" onclick="setPlaySpeed()" type="button">Set audio to be play in slow motion</button><br>
+    </div>
+
+    <div class="audio-player-box">
+      <audio id="myAudio" controls>
+        <source src="/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--354f74f7fc52040bac094dc0e5387f0365608fb9/09%20Beep%20It.mp3"</source>
+      </audio>
+    </div>
+
+    <section class="upload-box">
+      <h3>Add Another Song</h3>
+      <div class="form-box">
+        <%= form_for @song do |f| %>
+
+          <%= f.file_field :audio, id: "song_audio" %>
+          <%= f.label :audio %>
+
+          <%= f.submit "Add Song", id: "song_audio" %>
+        <% end %>
+      </div>
+    </section>
+  </div>
 </section>
-<h2>Upload a new MP3</h2>
-<%= form_tag upload_path, :method => "post", :multipart => true do %>
-    <%= file_field_tag "mp3file" %>
-    <%= submit_tag "Upload" %>
-<% end %>
-<h2>Download and Delete Existing MP3's</h2>
-<table>
-<% @songs.each do |song| %>
-    <tr>
-        <td><%= song.key %></td>
-        <td><%= link_to "HTML5 Audio", download_url_for(song.key), :class => "html5" %></td>
-        <td><%= link_to "Download", download_url_for(song.key) %></td>
-        <td><%= link_to "Torrent", torrent_url_for(song.key) %></td>
-        <td><%= link_to "Delete",  "songs/delete/?song=" + song.key, :confirm => 'Are you sure you want to delete ' + song.key + '?' %></td>
-    </tr>
-<% end %>
-</table>
+
+<script>
+  var audio = document.getElementById("myAudio");
+
+  function getPlaySpeed() {
+      alert(audio.playbackRate);
+  }
+
+  function setPlaySpeed() {
+      audio.playbackRate = .7;
+  }
+</script>

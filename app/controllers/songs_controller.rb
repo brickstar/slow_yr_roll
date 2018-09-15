@@ -1,35 +1,28 @@
 class SongsController < ApplicationController
 
   def index
-    @songs = AWS::S3::Bucket.find(ENV['AWS_BUCKET']).objects
+    @song = current_user.songs.new
+    @songs = Song.all
   end
 
   def show
   end
 
-  def upload
-    begin
-      AWS::S3::S3Object.store(sanitize_filename(params[:mp3file].original_filename), params[:mp3file].read, ENV['AWS_BUCKET'], :access => :public_read)
-      redirect_to root_path
-    rescue
-      render :text => "Couldn't complete the upload"
-    end
-  end
-
-  def delete
-    if (params[:song])
-      AWS::S3::S3Object.find(params[:song], ENV['AWS_BUCKET']).delete
-      redirect_to root_path
+  def create
+    @song = current_user.songs.create!(song_params)
+    if @song.save
+      flash[:notice] = "Successfully added new song!"
+      redirect_to songs_path
     else
-      render :text => "No song was found to delete!"
+      flash[:alert] = "Error adding new song!"
+      render :new
     end
   end
 
   private
 
-    def sanitize_filename(file_name)
-      just_filename = File.basename(file_name)
-      just_filename.sub(/[^\w\.\-]/,'_')
+    def song_params
+      params.require(:song).permit(:audio)
     end
 
 end
