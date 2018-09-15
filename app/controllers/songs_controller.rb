@@ -12,7 +12,6 @@ class SongsController < ApplicationController
     @song = current_user.songs.create!(song_params)
     if @song.save
       flash[:notice] = "Successfully added new song!"
-      binding.pry
       redirect_to songs_path
     else
       flash[:alert] = "Error adding new song!"
