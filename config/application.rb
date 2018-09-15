@@ -21,12 +21,6 @@ module SlowYrRoll
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
-    AWS::S3::Base.establish_connection!(
-      :access_key_id     => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    )
-
-    BUCKET = ENV['AWS_BUCKET']
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
