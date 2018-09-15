@@ -5,8 +5,7 @@ class SongsController < ApplicationController
     @songs = Song.all
   end
 
-  def new
-    @song = current_user.songs.new
+  def show
   end
 
   def create
@@ -26,4 +25,5 @@ class SongsController < ApplicationController
     def song_params
       params.require(:song).permit(:audio)
     end
+
 end
