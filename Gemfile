@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'omniauth-google-oauth2'
 gem 'faraday'
 gem 'figaro'
+gem 'soundmanager2-rails'
 
 
 group :development, :test do
