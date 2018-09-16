@@ -24,10 +24,6 @@ class SongsController < ApplicationController
 
   private
 
-    def current_user?
-      render file: '/public/404' unless current_user
-    end
-
     def song_params
       params.require(:song).permit(:audio, :title)
     end
