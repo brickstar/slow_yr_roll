@@ -4,7 +4,7 @@
       <%= image_tag  "dog_jump.gif", id: 'welcome-image' %>
       <div class="box-content">
         <% if current_user %>
-          <h3 id="title-1" class="title"><%= link_to "My Songs", songs_path %></h3>
+          <h3 id="title-1" class="title"><%= link_to "My Songs", song_path(@song) %></h3>
         <% else %>
           <h3 id="title" class="title"><%= link_to "Sign in with Google", "/auth/google" %></h3>
         <ul class="icon">
