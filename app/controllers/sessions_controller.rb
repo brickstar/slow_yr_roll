@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     if user.songs.empty?
       redirect_to new_song_path
     else
-      redirect_to songs_path(user.songs.first)
+      redirect_to song_path(user.songs.first)
     end
   end
 
