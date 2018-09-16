@@ -36,10 +36,16 @@
     <section class="playlist-box">
       <h3 id="song-list">Songs</h3>
       <% @songs.each_with_index do |song, index| %>
-        <ul class="list-group" >
+        <ul class="list-group" id="song-<%= song.id %>">
           <li class="list-group-item list-group-item-action list-group-item-light">
             <span><%= index += 1 %></span>
             <%= link_to song.title, song_path(song) %>
+            <!-- <%= link_to "edit", controller: "songs", action: "edit" do %>
+            <i class="far fa-edit" id="edit-<%= song.id %>"><span class="hidden">edit</span></i>
+            <% end %> -->
+            <%= link_to song_path(song), method: "delete", data: { confirm: "Are you sure you want to delete this song?" } do %>
+            <i class="far fa-trash-alt"><span class="hidden">delete</span></i>
+            <% end %>
             </li>
         </ul>
       <% end %>
