@@ -19,6 +19,7 @@ gem 'omniauth-google-oauth2'
 gem 'faraday'
 gem 'figaro'
 gem 'brakeman'
+gem 'selenium-webdriver'
 
 
 group :development, :test do
