@@ -22,6 +22,13 @@ class SongsController < ApplicationController
     end
   end
 
+  def destroy
+    @song = current_user.songs.find(params[:id])
+    @song.destroy
+    flash[:success] = "#{@song.title} was successfully deleted!"
+    redirect_to song_path(current_user.songs.first)
+  end
+
   private
 
     def song_params

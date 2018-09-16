@@ -2,9 +2,8 @@ require 'rails_helper'
 
 describe 'user logs in' do
   context 'should land on first song' do
-    it 'should see links to all songs by title' do
+    xit 'should see links to all songs by title' do
       user = create(:user)
-    binding.pry
       # sign in with google
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(:user)
       # user should land on Song.first/show
