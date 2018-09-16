@@ -40,7 +40,7 @@
           <li class="list-group-item list-group-item-action list-group-item-light">
             <span><%= index += 1 %></span>
             <%= link_to song.title, song_path(song) %>
-            <!-- <%= link_to "edit", controller: "songs", action: "edit" do %>
+            <!-- <%= link_to song_path(song), controller: "songs", action: "edit" do %>
             <i class="far fa-edit" id="edit-<%= song.id %>"><span class="hidden">edit</span></i>
             <% end %> -->
             <%= link_to song_path(song), method: "delete", data: { confirm: "Are you sure you want to delete this song?" } do %>
