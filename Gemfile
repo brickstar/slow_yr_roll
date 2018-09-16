@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'omniauth-google-oauth2'
 gem 'faraday'
 gem 'figaro'
+gem 'brakeman'
 
 
 group :development, :test do
