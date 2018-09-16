@@ -1,22 +1,18 @@
 class SongsController < ApplicationController
 
-  def index
-    @song = current_user.songs.new
-    @songs = Song.all
-  end
-
   def new
     @song = current_user.songs.new
   end
 
   def show
-    @new_song = current_user.songs.new
     @song = Song.find(params[:id])
+    @new_song = current_user.songs.new
     @songs = Song.all
   end
 
   def create
-    @song = current_user.songs.create!(song_params)
+    @song = current_user.songs.new(song_params)
+    @song.s3_path = Rails.application.routes.url_helpers.rails_blob_path(@song.audio_attachment, only_path: true)
     if @song.save
       flash[:notice] = "Successfully added new song!"
       redirect_to song_path(@song)

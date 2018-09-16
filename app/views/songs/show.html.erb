@@ -8,14 +8,14 @@
 
     <div class="audio-player-box">
       <audio id="myAudio" controls>
-        <source src="/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4804b10406c6e85e741c11490ce6447ac8d6c2df/04%20Electric%20Feel.mp3"</source>
+        <source src=<%= @song.s3_path %></source>
       </audio>
     </div>
 
     <section class="upload-box">
       <h3>Add Another Song</h3>
       <div class="form-box">
-        <%= form_for @song do |f| %>
+        <%= form_for @new_song do |f| %>
 
           <%= f.file_field :audio, id: "song_audio" %>
           <%= f.label :audio %>
