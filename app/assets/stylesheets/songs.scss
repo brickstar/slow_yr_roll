@@ -27,7 +27,7 @@ border-radius:7px 7px 7px 7px ;
 
 .song-page-box {
   background-image: url("rainbow-sinky.jpg");
-  height: 50em;
+  height: 66em;
   opacity: .9;
 }
 
@@ -58,6 +58,29 @@ border-radius:7px 7px 7px 7px ;
 
 .form-box {
   margin-top: 2em;
+}
+
+.playlist-form-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.playlist-box {
+  margin-top: 4em;
+  display: flex;
+  flex-direction: column;
+}
+
+#playback-rate-form-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#playback-rate-form {
+  width: 20em;
+  margin-top: 2em
 }
 
 #song_audio {

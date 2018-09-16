@@ -1,51 +1,63 @@
 <section class="song-page-box">
   <div class="song-page-content-box">
 
-    <div class="button-box">
-      <button id="speed-alert" onclick="getPlaySpeed()" type="button">What is the playback speed?</button>
-      <button id="set-speed" onclick="setPlaySpeed()" type="button">Set audio to be play in slow motion</button><br>
-    </div>
-
     <div class="audio-player-box">
       <audio id="myAudio" controls>
         <source src=<%= @song.s3_path %></source>
       </audio>
     </div>
 
+    <div id="playback-rate-form-box">
+      <form id="playback-rate-form">
+        <input id="playback-rate" type="range" value="1"
+                        min="0.1" max="1" step="0.01" />
+        <p>Playback Rate: <span id="currentPbr">1</span></p>
+      </form>
+    </div>
+
+  </div>
+  <div class="playlist-form-box">
     <section class="upload-box">
       <h3>Add Another Song</h3>
       <div class="form-box">
         <%= form_for @new_song do |f| %>
 
-          <%= f.file_field :audio, id: "song_audio" %>
-          <%= f.label :audio %>
+        <%= f.file_field :audio, id: "song_audio" %>
+        <%= f.label :audio %>
 
-          <%= f.text_field :title %>
-          <%= f.label :title %>
+        <%= f.text_field :title %>
+        <%= f.label :title %>
 
-          <%= f.submit "Add Song", id: "song_audio" %>
+        <%= f.submit "Add Song", id: "song_audio" %>
         <% end %>
       </div>
     </section>
 
-    <section>
-      <h3>Songs</h3>
-      <% @songs.each do |song| %>
-        <%= link_to song.title, song_path(song) %>
+    <section class="playlist-box">
+      <h3 id="song-list">Songs</h3>
+      <% @songs.each_with_index do |song, index| %>
+        <ul class="list-group" >
+          <li class="list-group-item list-group-item-action list-group-item-light">
+            <span><%= index += 1 %></span>
+            <%= link_to song.title, song_path(song) %>
+            </li>
+        </ul>
       <% end %>
     </section>
-
   </div>
 </section>
 
 <script>
-  var audio = document.getElementById("myAudio");
+  window.onload = function () {
 
-  function getPlaySpeed() {
-      alert(audio.playbackRate);
-  }
+    var v = document.getElementById("myAudio");
+    var p = document.getElementById("playback-rate");
+    var c = document.getElementById("currentPbr");
 
-  function setPlaySpeed() {
-      audio.playbackRate = .7;
-  }
+    p.addEventListener('input',function(){
+      c.innerHTML = p.value;
+      v.playbackRate = p.value;
+    },false);
+
+  };
 </script>
