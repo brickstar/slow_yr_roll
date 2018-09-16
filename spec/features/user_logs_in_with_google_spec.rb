@@ -10,8 +10,8 @@ RSpec.feature "user logs in" do
 
     click_link "Sign in with Google"
 
-    expect(current_path).to eq(songs_path)
-    expect(page).to have_content("Add Another Song")
+    expect(current_path).to eq(new_song_path)
+    expect(page).to have_content("Start by Adding a Song!")
     expect(page).to have_link("Logout")
   end
 end
