@@ -20,10 +20,21 @@
           <%= f.file_field :audio, id: "song_audio" %>
           <%= f.label :audio %>
 
+          <%= f.text_field :title %>
+          <%= f.label :title %>
+
           <%= f.submit "Add Song", id: "song_audio" %>
         <% end %>
       </div>
     </section>
+
+    <section>
+      <h3>Songs</h3>
+      <% @songs.each do |song| %>
+        <%= link_to song.title, song_path(song) %>
+      <% end %>
+    </section>
+
   </div>
 </section>
 

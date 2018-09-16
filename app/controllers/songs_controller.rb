@@ -10,7 +10,8 @@ class SongsController < ApplicationController
   end
 
   def show
-    @song = current_user.songs.new
+    @new_song = current_user.songs.new
+    @song = Song.find(params[:id])
     @songs = Song.all
   end
 
@@ -28,7 +29,7 @@ class SongsController < ApplicationController
   private
 
     def song_params
-      params.require(:song).permit(:audio)
+      params.require(:song).permit(:audio, :title)
     end
 
 end
