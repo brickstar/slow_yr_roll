@@ -12,6 +12,11 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/coverage/*
+coverage
+coverage/*
+echo "coverage" >> .gitignore
+
 
 # Ignore uploaded files in development
 /storage/*

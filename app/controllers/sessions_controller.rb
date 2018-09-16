@@ -3,7 +3,11 @@ class SessionsController < ApplicationController
   def create
     user = User.update_or_create(request.env["omniauth.auth"])
     session[:id] = user.id
-    redirect_to songs_path
+    if user.songs.empty?
+      redirect_to new_song_path
+    else
+      redirect_to song_path(user.songs.first)
+    end
   end
 
   def destroy

@@ -8,22 +8,33 @@
 
     <div class="audio-player-box">
       <audio id="myAudio" controls>
-        <source src="/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--354f74f7fc52040bac094dc0e5387f0365608fb9/09%20Beep%20It.mp3"</source>
+        <source src=<%= @song.s3_path %></source>
       </audio>
     </div>
 
     <section class="upload-box">
       <h3>Add Another Song</h3>
       <div class="form-box">
-        <%= form_for @song do |f| %>
+        <%= form_for @new_song do |f| %>
 
           <%= f.file_field :audio, id: "song_audio" %>
           <%= f.label :audio %>
+
+          <%= f.text_field :title %>
+          <%= f.label :title %>
 
           <%= f.submit "Add Song", id: "song_audio" %>
         <% end %>
       </div>
     </section>
+
+    <section>
+      <h3>Songs</h3>
+      <% @songs.each do |song| %>
+        <%= link_to song.title, song_path(song) %>
+      <% end %>
+    </section>
+
   </div>
 </section>
 
