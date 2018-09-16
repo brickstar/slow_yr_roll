@@ -1,0 +1,40 @@
+<section class="song-page-box">
+  <div class="song-page-content-box">
+
+    <div class="button-box">
+      <button id="speed-alert" onclick="getPlaySpeed()" type="button">What is the playback speed?</button>
+      <button id="set-speed" onclick="setPlaySpeed()" type="button">Set audio to be play in slow motion</button><br>
+    </div>
+
+    <div class="audio-player-box">
+      <audio id="myAudio" controls>
+        <source src="/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4804b10406c6e85e741c11490ce6447ac8d6c2df/04%20Electric%20Feel.mp3"</source>
+      </audio>
+    </div>
+
+    <section class="upload-box">
+      <h3>Add Another Song</h3>
+      <div class="form-box">
+        <%= form_for @song do |f| %>
+
+          <%= f.file_field :audio, id: "song_audio" %>
+          <%= f.label :audio %>
+
+          <%= f.submit "Add Song", id: "song_audio" %>
+        <% end %>
+      </div>
+    </section>
+  </div>
+</section>
+
+<script>
+  var audio = document.getElementById("myAudio");
+
+  function getPlaySpeed() {
+      alert(audio.playbackRate);
+  }
+
+  function setPlaySpeed() {
+      audio.playbackRate = .7;
+  }
+</script>
