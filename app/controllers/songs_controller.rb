@@ -7,7 +7,7 @@ class SongsController < ApplicationController
   def show
     @song = Song.find(params[:id])
     @new_song = current_user.songs.new
-    @songs = Song.all
+    @songs = current_user.songs.all
   end
 
   def create
