@@ -17,6 +17,7 @@ describe 'logged in user' do
       click_on('delete')
     end
 
+    expect(page).to have_content("#{@song1.title} was successfully deleted!")
     expect(@user.songs.count).to eq(1)
   end
 
