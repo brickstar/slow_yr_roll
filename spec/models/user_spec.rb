@@ -10,6 +10,10 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:token) }
   end
 
+  describe 'relationships' do
+    it { should have_many(:songs) }
+  end
+
   it "creates or updates itself from an oath hash" do
     auth = {
       provider: "google",
