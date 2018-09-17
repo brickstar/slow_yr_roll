@@ -21,6 +21,21 @@ describe 'logged in user' do
     click_button 'Add Song'
 
     expect(page).to have_content('new title')
+    expect(page).to have_content('Successfully added new song!')
     expect(Song.all.count).to eq(3)
+  end
+
+  it 'cannot upload without title' do
+
+    visit song_path(@song1)
+
+    expect(Song.all.count).to eq(2)
+
+    song3 = attach_file('song_audio', "#{Rails.root}/spec/features/test_uploads/beep_it.mp3", visible: false)
+
+    click_button 'Add Song'
+
+    expect(page).to have_content("Error adding new song!")
+    expect(Song.all.count).to eq(2)
   end
 end
