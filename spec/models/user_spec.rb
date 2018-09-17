@@ -1,6 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  describe 'validations' do
+    it { should validate_presence_of(:first_name) }
+    it { should validate_presence_of(:last_name) }
+    it { should validate_presence_of(:provider) }
+    it { should validate_presence_of(:uid) }
+    it { should validate_presence_of(:email) }
+    it { should validate_presence_of(:token) }
+  end
+
   it "creates or updates itself from an oath hash" do
     auth = {
       provider: "google",
