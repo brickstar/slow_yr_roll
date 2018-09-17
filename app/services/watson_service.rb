@@ -15,7 +15,7 @@ class WatsonService
 
     def req
       request = Net::HTTP::Post.new(uri)
-      request.basic_auth("14208fd0-7b6f-430c-a051-aab617f4584e", "5Ui56dF1ajTb")
+      request.basic_auth("#{ENV["WATSON_USERNAME"]}", "#{ENV["WATSON_PASSWORD"]}")
       request.content_type = "audio/mp3"
       request["Transfer-Endoding"] = "chunked"
       request.body = ""
