@@ -8,6 +8,7 @@ class SongsController < ApplicationController
     @song = current_user.songs.find(params[:id])
     @new_song = current_user.songs.new
     @songs = current_user.songs.all
+    @service = WatsonService.new(@song)
   end
 
   def create
