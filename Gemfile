@@ -28,7 +28,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'database_cleaner'
   gem 'simplecov'
   gem 'factory_bot_rails'
