@@ -12,8 +12,6 @@ describe 'logged in user' do
 
     visit song_path(@song1)
 
-    Capybara.ignore_hidden_elements = false
-
     expect(Song.all.count).to eq(2)
 
     song3 = attach_file('song_audio', "#{Rails.root}/spec/features/test_uploads/beep_it.mp3", visible: false)
