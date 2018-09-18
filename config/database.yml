@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: slow_yr_roll_production
   username: slow_yr_roll
   password: <%= ENV['SLOW_YR_ROLL_DATABASE_PASSWORD'] %>
