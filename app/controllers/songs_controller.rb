@@ -8,12 +8,13 @@ class SongsController < ApplicationController
     @song = current_user.songs.find(params[:id])
     @new_song = current_user.songs.new
     @songs = current_user.songs.all
-    @lyrics = WatsonService.new(@song).lyrics
   end
 
   def create
     @song = current_user.songs.new(song_params)
     @song.s3_path = Rails.application.routes.url_helpers.rails_blob_path(@song.audio_attachment, only_path: true)
+    @service = WatsonService.new(params[:song][:audio].tempfile)
+    @lyrics = @service.lyrics
     if @song.save
       flash[:notice] = "Successfully added new song!"
       redirect_to song_path(@song)

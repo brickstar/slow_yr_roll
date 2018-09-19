@@ -3,23 +3,28 @@ require 'uri'
 
 class WatsonService
   attr_reader :song
+
   def initialize(song = nil)
     @song = song
   end
 
   def lyrics
-    JSON.parse(response.body, symbolize_names: true)[:results][0][:alternatives][0][:transcript]
+    get_json[:results].map { |json| json[:alternatives][0][:transcript] }.join(',').gsub(',','')
   end
 
   private
+
+    def get_json
+      JSON.parse(response.body, symbolize_names: true)
+    end
 
     def req
       request = Net::HTTP::Post.new(uri)
       request.basic_auth("#{ENV["WATSON_USERNAME"]}", "#{ENV["WATSON_PASSWORD"]}")
       request.content_type = "audio/mp3"
-      request["Transfer-Endoding"] = "chunked"
+      # request["Transfer-Endoding"] = "chunked"
       request.body = ""
-      request.body << File.read("/Users/brickstar/Downloads/lisa_abc.mp3")
+      request.body << File.read(song)
       request
     end
 
