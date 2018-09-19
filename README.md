@@ -11,12 +11,12 @@ and "DOO" sounds. Pearl's amazing therapist Danielle had the perfect song in min
 
 
 #### Setup
-Clone this repository and run ``$ bundle``
-After signing in with Google, upload an Mp3 and you're ready to go!
+* Clone this repository and run ``$ bundle``
+* After signing in with Google, upload an Mp3 and you're ready to go!
 
 #### Versions
-ruby 2.4.1
-Rails/ActiveRecord 5.2.1
+* ruby 2.4.1
+* Rails/ActiveRecord 5.2.1
 
 #### Gems
 
