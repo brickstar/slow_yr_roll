@@ -16,7 +16,7 @@
 coverage
 coverage/*
 echo "coverage" >> .gitignore
-
+dump.rdb
 
 # Ignore uploaded files in development
 /storage/*
