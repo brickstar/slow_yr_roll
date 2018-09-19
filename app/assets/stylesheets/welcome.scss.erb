@@ -22,7 +22,11 @@
   border-radius: 15%;
 }
 
-.welcome-box {
+.welcome-box-1 {
+  background: linear-gradient(to bottom left, blue, pink);
+}
+
+.welcome-box-2 {
   height: 70em;
   display: flex;
   align-items: center;
@@ -57,32 +61,14 @@
 }
 
 .storybots-image {
+  padding: .3em;
   border-radius: 1em;
+  transition: transform .05s;
   background-size: cover;
   height: 10em;
   width: 20em;
 }
 
-#bot-1 {
-  background-image: url(<%= asset_path("storybots_red.jpg")%>);
-}
-
-#bot-2 {
-  background-image: url(<%= asset_path("storybots_orange.jpg")%>);
-}
-
-#bot-3 {
-  background-image: url(<%= asset_path("storybots_12345.jpg")%>);
-}
-
-#bot-4 {
-  background-image: url(<%= asset_path("storybots_green.jpg")%>);
-}
-
-#bot-5 {
-  background-image: url(<%= asset_path("storybots_blue.jpg")%>);
-}
-
-#bot-6 {
-  background-image: url(<%= asset_path("storybots_pink.jpg")%>);
+.storybots-image:hover {
+  transform: scale(1.01);
 }
