@@ -23,11 +23,10 @@
 }
 
 .welcome-box {
+  height: 70em;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10em;
-  margin-right: 25em;
 }
 
 #title-1 {
@@ -44,4 +43,46 @@
   height: 30em;
   width: 39.9em;
   border-radius: 15%;
+}
+
+.right-side {
+  width: 40em;
+}
+
+.storybots-image-box {
+  width: 40em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.storybots-image {
+  border-radius: 1em;
+  background-size: cover;
+  height: 10em;
+  width: 20em;
+}
+
+#bot-1 {
+  background-image: url(<%= asset_path("storybots_red.jpg")%>);
+}
+
+#bot-2 {
+  background-image: url(<%= asset_path("storybots_orange.jpg")%>);
+}
+
+#bot-3 {
+  background-image: url(<%= asset_path("storybots_12345.jpg")%>);
+}
+
+#bot-4 {
+  background-image: url(<%= asset_path("storybots_green.jpg")%>);
+}
+
+#bot-5 {
+  background-image: url(<%= asset_path("storybots_blue.jpg")%>);
+}
+
+#bot-6 {
+  background-image: url(<%= asset_path("storybots_pink.jpg")%>);
 }
