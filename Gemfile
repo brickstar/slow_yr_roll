@@ -20,6 +20,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'brakeman'
 gem 'selenium-webdriver'
+gem 'sidekiq'
 
 
 group :development, :test do
