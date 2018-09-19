@@ -1,16 +1,30 @@
-<div class="welcome-box">
-  <div class="col-md-3 col-sm-6">
-    <div class="box15">
-      <%= image_tag  "dog_jump.gif", id: 'welcome-image' %>
-      <div class="box-content">
-        <% if current_user %>
-          <h3 id="title-1" class="title"><%= link_to "My Songs", song_path(@song) %></h3>
-        <% else %>
-          <h3 id="title" class="title"><%= link_to "Sign in with Google", "/auth/google" %></h3>
-        <ul class="icon">
-        </ul>
-        <% end %>
+<div class="welcome-box-1">
+  <div class="welcome-box-2">
+    <section class="left-side">
+      <div class="col-md-3 col-sm-6">
+        <div class="box15">
+          <%= image_tag  "dog_jump.gif", id: 'welcome-image' %>
+          <div class="box-content">
+            <% if current_user %>
+              <h3 id="title-1" class="title"><%= link_to "My Songs", song_path(@song) %></h3>
+            <% else %>
+              <h3 id="title" class="title"><%= link_to "Sign in with Google", "/auth/google" %></h3>
+            <ul class="icon">
+            </ul>
+            <% end %>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+    <section "right-side">
+      <div class="storybots-image-box">
+        <%= image_tag "storybots_blue.jpg", class: "storybots-image"%>
+        <%= image_tag "storybots_pink.jpg", class: "storybots-image"%>
+        <%= image_tag "storybots_orange.jpg", class: "storybots-image"%>
+        <%= image_tag "storybots_red.jpg", class: "storybots-image"%>
+        <%= image_tag "storybots_green.jpg", class: "storybots-image"%>
+        <%= image_tag "storybots_12345.jpg", class: "storybots-image"%>
+      </div>
+    </section>
   </div>
 </div>

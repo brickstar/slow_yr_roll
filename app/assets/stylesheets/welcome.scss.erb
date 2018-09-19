@@ -18,16 +18,36 @@
   width: 40em;
 }
 
+
 .box-content {
   border-radius: 15%;
 }
 
-.welcome-box {
+.welcome-box-1 {
+  background: linear-gradient(to bottom left, #071dff, pink);
+}
+
+.welcome-box-2 {
+  height: 70em;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10em;
-  margin-right: 25em;
+}
+
+.logo {
+  font-family: 'Monoton', cursive;
+  position: absolute;
+  padding-top: .2em;
+  font-size: 2.7em;
+  text-align: center;
+}
+
+.navbar-brand {
+  margin-top: .2em;
+  font-size: 4em;
+  font-family: 'Monoton', cursive;
+  position: absolute;
+  right: .5em;
 }
 
 #title-1 {
@@ -44,4 +64,28 @@
   height: 30em;
   width: 39.9em;
   border-radius: 15%;
+}
+
+.right-side {
+  width: 40em;
+}
+
+.storybots-image-box {
+  width: 40em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.storybots-image {
+  padding: .3em;
+  border-radius: 1em;
+  transition: transform .05s;
+  background-size: cover;
+  height: 10em;
+  width: 20em;
+}
+
+.storybots-image:hover {
+  transform: scale(1.05);
 }

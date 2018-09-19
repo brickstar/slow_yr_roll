@@ -13,16 +13,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Concert+One|Monoton|Nunito+Sans|VT323" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   </head>
-
   <body>
-    <nav>
+    <% if current_user %>
+    <nav class="navbar fixed-top bg-light">
+      <p class="logo">Slow Yr Roll<i class="fab fa-itunes-note"></i></p>
+          <%= link_to 'Logout', logout_path, class: "navbar-brand" %>
       <%= render partial: 'shared/flash_messages', flash: flash %>
-      <% if current_user %>
-        <%= link_to 'Logout', logout_path %>
-      <% end %>
     </nav>
+    <% end %>
 
     <%= yield %>
   </body>
