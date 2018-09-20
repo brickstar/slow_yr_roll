@@ -9,6 +9,7 @@ class WatsonService
   end
 
   def lyrics
+    binding.pry
     get_json[:results].map { |json| json[:alternatives][0][:transcript] }.join(',').gsub(',','')
   end
 
@@ -24,7 +25,7 @@ class WatsonService
       request.content_type = "audio/mp3"
       # request["Transfer-Endoding"] = "chunked"
       request.body = ""
-      request.body << File.read(song)
+      request.body << song
       request
     end
 

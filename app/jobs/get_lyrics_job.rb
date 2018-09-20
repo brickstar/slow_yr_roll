@@ -2,8 +2,7 @@ class GetLyricsJob < ApplicationJob
   queue_as :default
 
   def perform(params)
-    service = WatsonService.new(params[:song][:audio].tempfile)
+    service = WatsonService.new(params)
     service.lyrics
-    # Do something later
   end
 end
