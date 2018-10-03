@@ -77,26 +77,5 @@
     <div id="output">A B. C. D. E. F. G. H. I </div>
 </section>
 
-<script src="bower_components/watson-speech/dist/watson-speech.js" type="text/javascript">
-  var stream;
-  document.querySelector('#button').onclick = function () {
-
-    stream = WatsonSpeech.SpeechToText.recognizeFile({
-      token: '<%= ENV['IBM_TOKEN'] %>',
-      file: document.querySelector('#audiofile').files[0],
-      play: true, // play the audio out loud
-      outputElement: '#output' // CSS selector or DOM Element (optional)
-    });
-
-    stream.on('error', function(err) {
-        console.log(err);
-    });
-
-  };
-
-  document.querySelector('#stop').onclick = function() {
-    if (stream) {
-        stream.stop();
-    }
-  };
-</script>
+<%= javascript_include_tag('speech.js') %>
+<!-- <script src="javascripts/speech.js"></script> -->

@@ -1,0 +1,23 @@
+const WatsonSpeech = require("watson-speech")
+// import WatsonSpeech from "../../laskdfj/node_modules/watson-speech/dist/watson-speech.js"
+var stream;
+document.querySelector('#button').onclick = function () {
+
+  stream = WatsonSpeech.SpeechToText.recognizeFile({
+    token: '<%= ENV['IBM_TOKEN'] %>',
+    file: document.querySelector('#audiofile').files[0],
+    play: true, // play the audio out loud
+    outputElement: '#output' // CSS selector or DOM Element (optional)
+  });
+
+  stream.on('error', function(err) {
+      console.log(err);
+  });
+
+};
+
+document.querySelector('#stop').onclick = function() {
+  if (stream) {
+      stream.stop();
+  }
+};
