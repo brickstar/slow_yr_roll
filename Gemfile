@@ -21,6 +21,7 @@ gem 'figaro'
 gem 'brakeman'
 gem 'selenium-webdriver'
 gem 'sidekiq'
+gem 'ibm_watson'
 
 
 group :development, :test do

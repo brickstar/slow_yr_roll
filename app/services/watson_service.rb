@@ -9,7 +9,6 @@ class WatsonService
   end
 
   def lyrics
-    binding.pry
     get_json[:results].map { |json| json[:alternatives][0][:transcript] }.join(',').gsub(',','')
   end
 
