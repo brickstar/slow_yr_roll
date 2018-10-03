@@ -44,6 +44,7 @@ border-radius:7px 7px 7px 7px ;
   padding-top: .2em;
   font-size: 2.7em;
   text-align: center;
+  padding-left: .5em;
 }
 
 .fa-itunes-note {
@@ -81,8 +82,26 @@ border-radius:7px 7px 7px 7px ;
   font-family: 'VT323', monospace;
 }
 
+.list-group-item {
+  background-color: red;
+}
+
 .song_audio {
   font-family: 'Concert One';
+  transition: transform .05s;
+}
+
+.song_audio:hover {
+  transform: scale(1.3);
+}
+
+#audio-label {
+  color: #ffa23d;
+}
+
+#song_audio {
+  color: #ffa23d;
+  margin-top: .7em;
 }
 
 #song-playlist {
@@ -125,7 +144,7 @@ border-radius:7px 7px 7px 7px ;
 
 .song-title {
   border-radius: .2em;
-  color: #6AFFBE;
+  color: #ffa23d;
   font-size: 2.5em;
   font-family: 'Concert One', light;
 }
@@ -133,6 +152,13 @@ border-radius:7px 7px 7px 7px ;
 .fa-trash-alt {
   color: #FF9748;
   font-size: 2em;
+}
+
+#trash-can {
+  color: #ff5d56;
+  float: right;
+  padding-top: .43em;
+  margin-left: 1em;
 }
 
 #song-index {
@@ -153,7 +179,6 @@ border-radius:7px 7px 7px 7px ;
 }
 
 #song_audio {
-  font-size: .6em;
   border-radius: .2em;
 }
 

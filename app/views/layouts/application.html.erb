@@ -17,13 +17,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   </head>
   <body>
-    <% if current_user %>
-    <nav class="navbar fixed-top bg-light">
+    <nav class="navbar fixed-top">
       <p class="logo">Slow Yr Roll<i class="fab fa-itunes-note"></i></p>
+      <% if current_user %>
           <%= link_to 'Logout', logout_path, class: "navbar-brand" %>
+          <% end %>
       <%= render partial: 'shared/flash_messages', flash: flash %>
     </nav>
-    <% end %>
 
     <%= yield %>
     <footer class='fixed-bottom'>
