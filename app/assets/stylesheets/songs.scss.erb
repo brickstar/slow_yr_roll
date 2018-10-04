@@ -44,6 +44,7 @@ border-radius:7px 7px 7px 7px ;
   padding-top: .2em;
   font-size: 2.7em;
   text-align: center;
+  padding-left: .5em;
 }
 
 .fa-itunes-note {
@@ -81,12 +82,65 @@ border-radius:7px 7px 7px 7px ;
   font-family: 'VT323', monospace;
 }
 
-.song_audio {
+#song-list:hover {
+  -webkit-transform: scale(1.02);
+  transition: transform .6s;
+  background: #c1f3f8;
+  -webkit-box-shadow: 5px 5px 10px rgba(0,0, 0, 0.4);
+  -moz-box-shadow: 5px 5px 10px rgba(0,0, 0, 0.4);
+  box-shadow: 5px 5px 10px rgba(0,0, 0, 0.4);
+
+}
+
+.list-group-item {
+  background-color: red;
+}
+
+
+#audio-label {
+  color: #FFAC38;
+}
+
+.btn-change{
+  height: 50px;
+  width: 100px;
+  background: lightseagreen;
+  margin: 20px;
+  float: left;
+  box-shadow: 0 0 1px #ccc;
+  -webkit-transition: all 0.5s ease-in-out;
+  border: 0px;
+  color: #fff;
+}
+
+#song_audio:hover{
   font-family: 'Concert One';
+  -webkit-transform: scale(1.07);
+  transition: transform .6s;
+  background: #c1f3f8;
+  -webkit-box-shadow: 5px 5px 10px rgba(0,0, 0, 0.4);
+  -moz-box-shadow: 5px 5px 10px rgba(0,0, 0, 0.4);
+  box-shadow: 5px 5px 10px rgba(0,0, 0, 0.4);
+}
+
+#song_audio {
+  height: 50px;
+  width: 5em;
+  background: whitesmoke;
+  box-shadow: 0 0 1px #ccc;
+  -webkit-transition: all 0.5s ease-in-out;
+  border: 0px;
+  color: #FFAC38;
+  margin-top: .7em;
 }
 
 #song-playlist {
   margin-bottom: .4em;
+}
+
+#song-list {
+  border-radius: .4em;
+  background-color: whitesmoke;
 }
 
 .upload-box {
@@ -125,7 +179,7 @@ border-radius:7px 7px 7px 7px ;
 
 .song-title {
   border-radius: .2em;
-  color: #6AFFBE;
+  color: #FFAC38;
   font-size: 2.5em;
   font-family: 'Concert One', light;
 }
@@ -133,6 +187,13 @@ border-radius:7px 7px 7px 7px ;
 .fa-trash-alt {
   color: #FF9748;
   font-size: 2em;
+}
+
+#trash-can {
+  color: #ff5d56;
+  float: right;
+  padding-top: .43em;
+  margin-left: 1em;
 }
 
 #song-index {
@@ -153,7 +214,6 @@ border-radius:7px 7px 7px 7px ;
 }
 
 #song_audio {
-  font-size: .6em;
   border-radius: .2em;
 }
 
