@@ -38,7 +38,7 @@
       <h3 class="song-list" id="song-playlist">Songs</h3>
       <% @songs.each_with_index do |song, index| %>
         <ul class="list-group" id="song-<%= song.id %>">
-          <li class="list-group-item list-group-item-action list-group-item-light">
+          <li id="song-list" class="list-group-item list-group-item-action list-group-item-light">
             <span id="song-index" class="song-title"><%= index += 1 %></span>
             <%= link_to song.title, song_path(song), class: "song-title" %>
             <!-- <%= link_to song_path(song), controller: "songs", action: "edit" do %>
