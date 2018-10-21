@@ -6,7 +6,7 @@
         <%= form_for @song do |f| %>
 
         <%= f.label :audio, id: "audio-upload-title"%>
-          <%= f.file_field :audio, id: "song_audio" %>
+          <%= f.file_field :audio, class: "audio-title", id: "song_audio audio-title" %>
 
           <%= f.label :title, id: "audio-upload-title"%>
           <%= f.text_field :title %>
