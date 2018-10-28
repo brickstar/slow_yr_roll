@@ -1,6 +1,7 @@
 <section class="song-page-box">
   <div class="song-page-content-box">
 
+    <p id="current-song-title">Now Playing:   <%= @song.title %></p>
     <div class="audio-player-box">
       <audio id="myAudio" controls>
         <source src=<%= @song.s3_path %></source>
@@ -14,8 +15,8 @@
         <p id="rate-number">Playback Rate: <span id="currentPbr">1</span></p>
       </form>
     </div>
-
   </div>
+
   <div class="playlist-form-box">
     <section class="upload-box">
       <h3 class="song-list">Add Another!</h3>
@@ -32,7 +33,6 @@
         <% end %>
       </div>
     </section>
-
 
     <section class="playlist-box">
       <h3 class="song-list" id="song-playlist">Songs</h3>
@@ -52,7 +52,6 @@
       <% end %>
     </section>
   </div>
-</section>
 
 <script>
   window.onload = function () {

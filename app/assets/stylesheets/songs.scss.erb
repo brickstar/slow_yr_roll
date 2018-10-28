@@ -53,7 +53,7 @@ border-radius:7px 7px 7px 7px ;
 }
 
 .song-page-box {
-  padding-right: 4em;
+  // padding-right: 4em;
   background-image: url(<%= asset_path("rainbow-sinky.jpg")%>);
   height: 66em;
   opacity: .9;
@@ -67,13 +67,14 @@ border-radius:7px 7px 7px 7px ;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 4em;
+  // margin-top: 4em;
 }
 
 #rate-number {
   color: #1C457F;
   font-size: 2em;
   font-family: 'VT323', monospace;
+  font-size: 33px;
 }
 
 .song-list {
@@ -142,14 +143,14 @@ border-radius:7px 7px 7px 7px ;
   background-color: whitesmoke;
 }
 
-.upload-box {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
+// .upload-box {
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+// }
 
 .playlist-box {
-  margin-left: 9em;
+  // margin-left: 9em;
   display: flex;
   flex-direction: column;
 }
@@ -164,10 +165,9 @@ border-radius:7px 7px 7px 7px ;
 }
 
 .playlist-form-box {
-  padding-left: 8em;
+  // padding-left: 8em;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .list-group-item {
@@ -201,6 +201,14 @@ border-radius:7px 7px 7px 7px ;
 
 .audio-title {
   color: #ff9de0;
+}
+
+#current-song-title {
+  display: flex;
+  justify-content: center;
+  color: #1C457F;
+  font-family: 'VT323', monospace;
+  font-size: 33px;
 }
 
 #audio-upload-title {
@@ -266,4 +274,30 @@ footer {
   height: 2em;
   bottom: 0;
   width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .song-page-box {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+    }
+    .playlist-form-box {
+      flex-direction: column;
+    }
+    #song-playlist {
+      display: flex;
+      justify-content: center;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    .playlist-form-box :nth-child(1) { order: 2; }
+    .playlist-form-box :nth-child(2) { order: 1; }
+    // .upload-box:nth-of-type(2) { order: 2; }
+    // .wrapper div:first-child {
+    //   order: 1;
+    // }
 }
