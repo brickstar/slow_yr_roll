@@ -1,15 +1,19 @@
-<section class="upload-box">
-  <h3>Start by Adding a Song!</h3>
-  <div class="form-box">
-    <%= form_for @song do |f| %>
+<div class="song-page-box">
+  <section class="upload-box">
+    <h3 class="start-script">Start by Adding a Song!</h3>
+    <div class="form-container">
+      <div class="form-box">
+        <%= form_for @song do |f| %>
 
-      <%= f.file_field :audio, id: "song_audio" %>
-      <%= f.label :audio %>
+        <%= f.label :audio, id: "audio-upload-title"%>
+          <%= f.file_field :audio, class: "audio-title", id: "song_audio audio-title" %>
 
-      <%= f.text_field :title %>
-      <%= f.label :title %>
+          <%= f.label :title, id: "audio-upload-title"%>
+          <%= f.text_field :title %>
 
-      <%= f.submit "Add Song", id: "song_audio" %>
-    <% end %>
-  </div>
-</section>
+          <%= f.submit "Add Song", id: "song_audio" %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>

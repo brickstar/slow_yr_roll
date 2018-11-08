@@ -22,6 +22,8 @@ gem 'brakeman'
 gem 'selenium-webdriver'
 gem 'sidekiq'
 gem 'ibm_watson'
+gem 'newrelic_rpm'
+
 
 
 group :development, :test do

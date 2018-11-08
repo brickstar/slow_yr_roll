@@ -6,14 +6,15 @@ class SessionsController < ApplicationController
     if user.songs.empty?
       redirect_to new_song_path
     else
+      flash[:notice] = "Hey #{user.first_name}!"
       redirect_to song_path(user.songs.first)
     end
   end
 
   def destroy
     session.clear
-    redirect_to root_url
     flash[:notice] = "Signed out!"
+    redirect_to root_url
   end
 
 end

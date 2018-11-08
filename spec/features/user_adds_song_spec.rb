@@ -14,7 +14,7 @@ describe 'logged in user' do
 
     expect(Song.all.count).to eq(2)
 
-    song3 = attach_file('song_audio', "#{Rails.root}/spec/features/test_uploads/beep_it.mp3", visible: false)
+    song3 = attach_file('audio-label', "#{Rails.root}/spec/features/test_uploads/beep_it.mp3", visible: false)
 
     fill_in 'song[title]', with: 'new title'
 
@@ -31,7 +31,7 @@ describe 'logged in user' do
 
     expect(Song.all.count).to eq(2)
 
-    song3 = attach_file('song_audio', "#{Rails.root}/spec/features/test_uploads/beep_it.mp3", visible: false)
+    song3 = attach_file('audio-label', "#{Rails.root}/spec/features/test_uploads/beep_it.mp3", visible: false)
 
     click_button 'Add Song'
 
