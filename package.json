@@ -1,5 +1,9 @@
 {
   "name": "slow_yr_roll",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "requirejs": "^2.3.6",
+    "watson-developer-cloud": "^3.11.1",
+    "watson-speech": "^0.35.1"
+  }
 }

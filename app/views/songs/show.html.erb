@@ -14,7 +14,11 @@
         <p id="rate-number">Playback Rate: <span id="currentPbr">1</span></p>
       </form>
     </div>
-
+    <div class="lyrics-box">
+      <div class="lyrics">
+        <%= @song.lyrics %>
+      </div>
+    </div>
   </div>
   <div class="playlist-form-box">
     <section class="upload-box">
@@ -41,7 +45,7 @@
           <li id="song-list" class="list-group-item list-group-item-action list-group-item-light">
             <span id="song-index" class="song-title"><%= index += 1 %></span>
             <%= link_to song.title, song_path(song), class: "song-title" %>
-            <!-- <%= link_to song_path(song), controller: "songs", action: "edit" do %>
+            <!--<%= link_to song_path(song), controller: "songs", action: "edit" do %>
             <i class="far fa-edit" id="edit-<%= song.id %>"><span class="hidden">edit</span></i>
             <% end %> -->
             <%= link_to song_path(song), method: "delete", data: { confirm: "Are you sure you want to delete this song?" } do %>
