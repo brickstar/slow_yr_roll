@@ -2,7 +2,7 @@
 
 #### About
 I first got the idea to build this app during a speech therapy appointment for my daughter. My daughter Pearl has Down Syndrome. While Pearl is thriving - we are always looking for ways to leverage her learning. During this particular therapy appointment, we were working on strengthening Pearl's speech mechanism. Specifically we were working on pronunciation of "D"
-and "DOO" sounds. Pearl's amazing therapist Danielle had the perfect song in mind for this - the Baby Shark song by PinkFong. After she got the song queued up, she realized the playback rate was just too fast to accomplish what she had intended. This application allows parents and therapitsts to upload audio files and control the speed of the playback rate. Pearl loves it!
+and "DOO" sounds. Pearl's amazing therapist Danielle had the perfect song in mind for this - the Baby Shark song by PinkFong. After she got the song queued up, she realized the playback rate was just too fast to accomplish what she had intended. This application allows parents and therapitsts to upload audio files and control the speed of the playback rate without changing the pitch. Pearl loves it!
 
 #### See it Live
 [SlowYrRoll](https://slow-yr-roll.herokuapp.com) on Heroku
