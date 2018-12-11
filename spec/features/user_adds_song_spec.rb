@@ -35,7 +35,7 @@ describe 'logged in user' do
 
     click_button 'Add Song'
 
-    expect(page).to have_content("Error adding new song!")
+    expect(page).to have_content("Error: Title must be present")
     expect(Song.all.count).to eq(2)
   end
 end
