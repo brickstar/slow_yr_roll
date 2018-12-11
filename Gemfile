@@ -21,6 +21,7 @@ gem 'figaro'
 gem 'brakeman'
 gem 'selenium-webdriver'
 gem 'newrelic_rpm'
+gem 'rails-i18n'
 
 
 group :development, :test do

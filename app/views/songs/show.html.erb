@@ -1,6 +1,8 @@
 <section class="song-page-box">
   <div class="song-page-content-box">
-
+    <div class="translate-button-box">
+      <%= render partial: 'shared/translate_button' %>
+    </div>
     <div class="audio-player-box">
       <audio id="myAudio" controls>
         <source src=<%= @song.s3_path %></source>
@@ -11,40 +13,36 @@
       <form id="playback-rate-form">
         <input id="playback-rate" type="range" value="1"
                         min="0.1" max="1" step="0.01" />
-        <p id="rate-number">Playback Rate: <span id="currentPbr">1</span></p>
+        <p id="rate-number"><%= t(".playback rate") %>: <span id="currentPbr">1</span></p>
       </form>
     </div>
 
   </div>
   <div class="playlist-form-box">
     <section class="upload-box">
-      <h3 class="song-list">Add Another!</h3>
+      <h3 class="song-list"><%= t(".add another")%>!</h3>
       <div class="form-box">
         <%= form_for @new_song do |f| %>
 
-        <%= f.label :audio %>
+        <%= f.label t(".audio") %>
         <%= f.file_field :audio, id: "audio-label" %>
 
-        <%= f.label :title %>
+        <%= f.label t(".title") %>
         <%= f.text_field :title %>
 
-        <%= f.submit "Add Song", id: "song_audio" %>
+        <%= f.submit t(".submit"), id: "song_audio" %>
         <% end %>
       </div>
     </section>
 
-
     <section class="playlist-box">
-      <h3 class="song-list" id="song-playlist">Songs</h3>
+      <h3 class="song-list" id="song-playlist"><%= t('.songs') %></h3>
       <% @songs.each_with_index do |song, index| %>
         <ul class="list-group" id="song-<%= song.id %>">
           <li id="song-list" class="list-group-item list-group-item-action list-group-item-light">
             <span id="song-index" class="song-title"><%= index += 1 %></span>
             <%= link_to song.title, song_path(song), class: "song-title" %>
-            <!-- <%= link_to song_path(song), controller: "songs", action: "edit" do %>
-            <i class="far fa-edit" id="edit-<%= song.id %>"><span class="hidden">edit</span></i>
-            <% end %> -->
-            <%= link_to song_path(song), method: "delete", data: { confirm: "Are you sure you want to delete this song?" } do %>
+            <%= link_to song_path(song), method: "delete", data: { confirm: t(".delete") } do %>
             <i id="trash-can" class="far fa-trash-alt"><span class="hidden">delete</span></i>
             <% end %>
             </li>

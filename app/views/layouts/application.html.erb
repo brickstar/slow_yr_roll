@@ -20,12 +20,13 @@
     <nav class="navbar fixed-top">
       <p class="logo">Slow Yr Roll<i class="fab fa-itunes-note"></i></p>
       <% if current_user %>
-          <%= link_to 'Logout', logout_path, class: "navbar-brand" %>
-          <% end %>
+          <%= link_to t(".logout"), logout_path, class: "navbar-brand" %>
+      <% end %>
       <%= render partial: 'shared/flash_messages', flash: flash %>
     </nav>
 
     <%= yield %>
+    
     <footer class='fixed-bottom'>
       <p id="footer-text">for my pearl, love dad<p>
     </footer>
