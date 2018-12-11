@@ -1,17 +1,20 @@
 <div class="song-page-box">
   <section class="upload-box">
-    <h3 class="start-script">Start by Adding a Song!</h3>
+    <div class="translate-button-box-new">
+      <%= render partial: 'shared/translate_button' %>
+    </div>
+    <h3 class="start-script"><%= t(".start")%>!</h3>
     <div class="form-container">
       <div class="form-box">
         <%= form_for @song do |f| %>
 
-        <%= f.label :audio, id: "audio-upload-title"%>
+        <%= f.label t(".audio"), id: "audio-upload-title"%>
           <%= f.file_field :audio, class: "audio-title", id: "song_audio audio-title" %>
 
-          <%= f.label :title, id: "audio-upload-title"%>
+          <%= f.label t(".title"), id: "audio-upload-title"%>
           <%= f.text_field :title %>
 
-          <%= f.submit "Add Song", id: "song_audio" %>
+          <%= f.submit t(".submit"), id: "song_audio" %>
         <% end %>
       </div>
     </div>

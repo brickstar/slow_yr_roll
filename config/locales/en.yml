@@ -30,4 +30,32 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  songs:
+    new:
+      start: "Start by Adding a Song"
+      audio: "Audio"
+      title: "Title"
+      submit: "Add Song"
+    show:
+      songs: "Songs"
+      playback rate: "Playback Rate"
+      add another: "Add Another"
+      audio: "Audio"
+      title: "Title"
+      submit: "Add Song"
+      delete: "Are you sure you want to delete this song?"
+
+  layouts:
+    application:
+      logout: "Logout"
+
+  welcome:
+    index:
+      my songs: "My Songs"
+      signin: "Sign in with Google"
+
+  hello flash: "Hey"
+  signed out flash: "Signed out"
+  success flash: "Successfully added new song"
+  error adding flash: "Error: Title must be present"
+  successfully deleted flash: "was successfully deleted"

@@ -1,0 +1,5 @@
+<% if I18n.locale == :es %>
+  <%= link_to "translate to english", translation_path(locale: "en"), method: "put", class:"btn btn-primary translate-button" %>
+<% else %>
+  <%= link_to "traducir al español", translation_path(locale: "es"), method: "put", class:"btn btn-primary translate-button" %>
+<% end %>

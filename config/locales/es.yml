@@ -1,0 +1,31 @@
+es:
+  songs:
+    new:
+      start: "Comienza Agregando una Canción"
+      audio: "Audio"
+      title: "Título"
+      submit: "Añadir"
+
+    show:
+      songs: "Canciones"
+      playback rate: "Tempo de Audio"
+      add another: "¡Agrega Otro"
+      audio: "Audio"
+      title: "Título"
+      submit: "Añadir"
+      delete: "¿Seguro que quieres borrar esta canción"
+
+  layouts:
+    application:
+      logout: "Cerrar Sesión"
+
+  welcome:
+    index:
+      my songs: "Canciones"
+      signin: "Inicia Sesión con Google"
+
+  hello flash: "¡Hola"
+  signed out flash: "¡Cerró Sesión"
+  success flash: "Añadida exitosamente nueva canción"
+  error adding flash: "¡Error: el título debe estar presente!"
+  successfully deleted flash: "bebé fue eliminado con éxito"

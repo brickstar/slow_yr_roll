@@ -14,19 +14,26 @@ class SongsController < ApplicationController
     @song = current_user.songs.new(song_params)
     @song.s3_path = Rails.application.routes.url_helpers.rails_blob_path(@song.audio_attachment, only_path: true)
     if @song.save
-      flash[:notice] = "Successfully added new song!"
+      flash[:notice] = "#{t("success flash")}!"
       redirect_to song_path(@song)
-    else
-      flash[:alert] = "Error adding new song!"
+    elsif current_user.songs.length == 1 && current_user.songs.first.title.empty?
+      flash[:alert] = "#{t("error adding flash")}"
       render :new
+    else
+      flash[:alert] = "#{t("error adding flash")}"
+      redirect_to song_path(current_user.songs.first)
     end
   end
 
   def destroy
     @song = current_user.songs.find(params[:id])
     @song.destroy
-    flash[:success] = "#{@song.title} was successfully deleted!"
-    redirect_to song_path(current_user.songs.first)
+    flash[:success] = "#{@song.title} #{t("successfully deleted flash")}!"
+    if current_user.songs.empty?
+      render :new
+    else
+      redirect_to song_path(current_user.songs.first)
+    end
   end
 
   private
