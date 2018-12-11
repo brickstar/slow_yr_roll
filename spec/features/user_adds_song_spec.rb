@@ -38,4 +38,5 @@ describe 'logged in user' do
     expect(page).to have_content("Error: Title must be present")
     expect(Song.all.count).to eq(2)
   end
+  
 end
