@@ -7,6 +7,8 @@ and "DOO" sounds. Pearl's amazing therapist Danielle had the perfect song in min
 #### See it Live
 [SlowYrRoll](https://slow-yr-roll.herokuapp.com) on Heroku
 
+![slow-demo](https://user-images.githubusercontent.com/33355897/50727860-42bd5800-10de-11e9-9048-fe15027d6079.gif)
+
 <img width="1440" alt="screen shot 2018-09-19 at 11 49 44 am" src="https://user-images.githubusercontent.com/33355897/45772631-7b0b5a00-bc05-11e8-8679-bc87c5969592.png">
 
 <img width="1440" alt="screen shot 2018-09-19 at 12 14 26 pm" src="https://user-images.githubusercontent.com/33355897/45772699-a55d1780-bc05-11e8-9564-221fcf31e74f.png">
