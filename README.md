@@ -1,8 +1,7 @@
 # SlowYrRoll!
 
 #### About
-I first got the idea to build this app during a speech therapy appointment for my daughter. My daughter Pearl has Down Syndrome. While Pearl is thriving - we are always looking for ways to leverage her learning. During this particular therapy appointment, we were working on strengthening Pearl's speech mechanism. Specifically we were working on pronunciation of "D"
-and "DOO" sounds. Pearl's amazing therapist Danielle had the perfect song in mind for this - the Baby Shark song by PinkFong. After she got the song queued up, she realized the playback rate was just too fast to accomplish what she had intended. This application allows parents and therapitsts to upload audio files and control the speed of the playback rate without changing the pitch. Pearl loves it!
+The mission of this application is to increase the learning capabilities of children with a speech delay.  Often the tempo of music is a little too fast for young children with special needs to be able replicate pronunciation and phonetics.  Slowing the playback rate makes the music more accessible for learning.  This application allows parents and therapitsts to upload audio files and slow down the rate of speed during playback without changing the pitch.  Lyrics are also available to users via IBM Watson's Speech to Text API.  This was a solo project built over 10 days during module 3 at Turing.
 
 #### See it Live
 [SlowYrRoll](https://slow-yr-roll.herokuapp.com) on Heroku
