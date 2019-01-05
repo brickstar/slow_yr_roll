@@ -11,6 +11,8 @@ and "DOO" sounds. Pearl's amazing therapist Danielle had the perfect song in min
 
 <img width="1440" alt="screen shot 2018-09-19 at 12 14 26 pm" src="https://user-images.githubusercontent.com/33355897/45772699-a55d1780-bc05-11e8-9564-221fcf31e74f.png">
 
+![test-gif](https://user-images.githubusercontent.com/33355897/50726993-eeac7680-10d1-11e9-9577-b84a1d43e2eb.gif)
+
 #### Setup
 * Clone this repository and run ``$ bundle``
 * To run this application locally you will need to add the following ENV variables to config/application.yml; GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_BUCKET (name of your AWS S3 bucket)
