@@ -1,7 +1,7 @@
 # SlowYrRoll!
 
 #### About
-The mission of this application is to increase the learning capabilities of children with a speech delay.  Often the tempo of music is a little too fast for young children with special needs to be able replicate pronunciation and phonetics.  Slowing the playback rate makes the music more accessible for learning.  This application allows parents and therapitsts to upload audio files and slow down the rate of speed during playback without changing the pitch.  Lyrics are also available to users via IBM Watson's Speech to Text API.  This was a solo project built over 10 days during module 3 at Turing.
+The mission of this application is to increase the learning capabilities of children with a speech delay.  Often the tempo of music is a little too fast for young children with special needs to be able replicate pronunciation and phonetics.  Slowing the playback rate makes the music more accessible for learning.  This application allows parents and therapitsts to upload audio files and slow down the rate of speed during playback without changing the pitch.  Lyrics are also available to users via IBM Watson's Speech to Text API.  This was a solo project built over 10 days during module 3 at Turing School of Software & Design.
 
 #### See it Live
 [SlowYrRoll](https://slow-yr-roll.herokuapp.com) on Heroku
